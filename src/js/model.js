@@ -1,4 +1,4 @@
-import { getJSON, AJAX } from "./helpers";
+import { AJAX } from "./helpers";
 import { API_URLS, API_KEYS } from "./config";
 
 export const state = {
