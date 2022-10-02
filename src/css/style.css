@@ -1,0 +1,231 @@
+:root {
+    --primary: hsl(0, 0%, 17%);
+    --secondary: hsl(0, 0%, 59%);
+    --error: rgba(255, 0, 0, 0.712);
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+}
+
+/*=========== header ============*/
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/pattern-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    max-height: 280px;
+    padding: 2em;
+}
+
+
+.header__title {
+    margin-bottom: 1em;
+    font-size: 25px;
+}
+
+/* inputs */
+
+#ip-input,
+.header__input-btn {
+    border: 0;
+}
+
+#ip-input {
+    font-size: 18px;
+    padding: 15px 1em;
+    border-radius: 13px 0 0 13px;
+    outline: 0;
+    width: 100%;
+}
+
+#ip-input::-webkit-input-placeholder {
+    font-size: 13px;
+}
+
+#ip-input::-moz-placeholder {
+    font-size: 13px;
+}
+
+#ip-input:-ms-input-placeholder {
+    font-size: 13px;
+}
+
+#ip-input::-ms-input-placeholder {
+    font-size: 13px;
+}
+
+#ip-input::placeholder {
+    font-size: 13px;
+}
+
+.header__input-btn {
+    width: 60px;
+    border-radius: 0 13px 13px 0;
+    background-color: black;
+    cursor: pointer;
+    transition: all 350ms;
+}
+
+.header__input-btn:hover,
+.header__input-btn:focus {
+    background-color: var(--primary);
+}
+
+.header__ip-input {
+    display: flex;
+    justify-content: center;
+}
+
+/* info */
+
+.header__ip-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 2em;
+    border-radius: 15px;
+    margin-top: 1.5em;
+    z-index: 1;
+    position: relative;
+}
+
+.ip-info-container div h6:not(.ip-info-container div:first-child h6) {
+    padding-top: 1.3em;
+}
+
+.ip-info-container h6 {
+    color: var(--secondary);
+}
+
+.ip-info-container p {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding-top: 5px;
+}
+
+/*=========== map ============*/
+
+#map {
+    height: 80vh;
+    background-color: hsl(0, 0%, 81%);
+    z-index: 0;
+}
+
+/*=========== error message ============*/
+
+.error-message {
+    color: var(--error);
+    padding-top: 10px;
+}
+
+/* =============loading spinner============= */
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #FFF;
+    border-bottom-color: var(--primary);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    -webkit-animation: rotation 1s linear infinite;
+    animation: rotation 1s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==============media queries================= */
+
+@media (min-width: 1000px) {
+    /*=========== header ============*/
+
+    header {
+        max-height: 230px;
+    }
+
+    /* inputs */
+    .header__ip-input {
+        align-self: center;
+        width: 500px;
+    }
+
+    /* info */
+    .header__ip-info {
+        align-self: center;
+        translate: 0 15px;
+        display: block;
+    }
+
+    .ip-info-container {
+        text-align: left;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        -moz-column-gap: 1em;
+        column-gap: 1em;
+    }
+
+    .ip-info-container div:not(.ip-info-container div:last-child) {
+        border-right: 1px solid var(--secondary);
+        padding-right: .8em;
+    }
+
+    .ip-info-container div h6:not(.ip-info-container div:first-child h6) {
+        padding-top: 0;
+    }
+
+    .ip-info-container p {
+        grid-row: 2;
+        font-size: 1.3em;
+    }
+}
+
+/* ===============hiding class================ */
+
+.hidden {
+    display: none;
+}
+
+/*=========== credits ============*/
+
+.attribution {
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+}
+
+.attribution a {
+    color: yellow;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ip-address-tracker",
+  "version": "1.1.0",
+  "description": "Find the location of any IP address",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Ismail",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/core-js": "^2.5.5",
+    "@types/regenerator-runtime": "^0.13.1",
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "core-js": "^3.25.3",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
