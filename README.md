@@ -19,7 +19,7 @@
 
 ### Links
 
-- **Live Site URL**: https://ismail-ip-tracker.netlify.app/
+- [**Live Site**](https://ismail-ip-tracker.netlify.app/)
 
 ## Process
 
