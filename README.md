@@ -30,4 +30,6 @@
 - Javascript/ES6+
 - Leaflet library (map)
 - MVC architecture
+- Bundled with parcel
+- Ipify and ipGeolocation API's
 - Mobile-first workflow
