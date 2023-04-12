@@ -1,3 +1,5 @@
+import markerIcon from "../img/icon-location.svg"
+
 class View {
   _form = document.querySelector(".header__ip-input");
   _btn = document.querySelector(".header__input-btn");
@@ -11,22 +13,22 @@ class View {
   _marker;
 
 
-  renderIpInfo (ip, region, timezone, isp) {
+  renderIpInfo(ip, region, timezone, isp) {
     this._ipText.textContent = ip;
     this._locationText.textContent = region;
     this._timezoneText.textContent = timezone;
     this._ispText.textContent = isp;
   }
 
-  _addHandlerRender (handler) {
+  _addHandlerRender(handler) {
     window.addEventListener("load", handler);
   }
 
-  _addHandlerToggleZoomBtns (handler) {
+  _addHandlerToggleZoomBtns(handler) {
     window.addEventListener("resize", handler);
   }
 
-  _addHandlerChangeMapView (handler) {
+  _addHandlerChangeMapView(handler) {
     const self = this;
     this._btn.addEventListener("click", function (e) {
       e.preventDefault();
@@ -35,7 +37,7 @@ class View {
     });
   }
 
-  initMap (lat, lot, zoom, usedMap) {
+  initMap(lat, lot, zoom, usedMap) {
     this._map = L.map("map").setView([lat, lot], zoom);
 
     L.tileLayer(usedMap).addTo(this._map);
@@ -43,7 +45,7 @@ class View {
     this.setMapMarker(lat, lot);
   }
 
-  changeMapView (lat, lot, zoom) {
+  changeMapView(lat, lot, zoom) {
     this._map.setView([lat, lot], zoom, {
       animate: true,
       pan: {
@@ -56,10 +58,10 @@ class View {
     this.setMapMarker(lat, lot);
   }
 
-  setMapMarker (lat, lot) {
+  setMapMarker(lat, lot) {
     this._marker = L.marker([lat, lot], {
       icon: L.icon({
-        iconUrl: 'icon-location.svg',
+        iconUrl: markerIcon,
         iconSize: [41, 51],
         iconAnchor: [20, 51],
         popupAnchor: [0, -51]
@@ -67,17 +69,17 @@ class View {
     }).addTo(this._map);
   }
 
-  renderError (message) {
+  renderError(message) {
     if (document.querySelector(".error-message")) return;
     const markup = `<p class="error-message">${message}</p>`;
     this._form.insertAdjacentHTML("afterend", markup);
   };
 
-  removeError () {
+  removeError() {
     if (this._inputIp.value.trim()) document.querySelector(".error-message")?.remove();
   };
 
-  showSpinner () {
+  showSpinner() {
     document.querySelector(".loader").classList.toggle("hidden");
     this._ipInfoContainer.classList.toggle("hidden");
   }

@@ -1,7 +1,3 @@
-import "regenerator-runtime/runtime";
-import { async } from "regenerator-runtime/runtime";
-import "core-js/stable";
-
 import { DEFAULT_ZOOM, USED_MAP } from "./config";
 import * as model from "./model";
 import View from "./View";
@@ -9,13 +5,12 @@ import View from "./View";
 const LoadInitMap = async function () {
   try {
     View.showSpinner();
-    await model.getUserLocation();
-    await model.getLocation(model.state.userIp);
+    await model.getUserIp();
     await model.getIpInfo(model.state.userIp);
     View.showSpinner();
 
     View.renderIpInfo(...Object.values(model.state.ipData));
-    View.initMap(...model.state.latLot, DEFAULT_ZOOM, USED_MAP);
+    View.initMap(model.state.ipData.lat, model.state.ipData.lng, DEFAULT_ZOOM, USED_MAP);
     controlZoomBtns();
   } catch (err) {
     View.renderError("Something went wrong");
@@ -37,12 +32,11 @@ const controlMapView = async function () {
 
   try {
     View.showSpinner();
-    await model.getLocation(inputIpVal);
     await model.getIpInfo(inputIpVal);
     View.showSpinner();
 
     View.renderIpInfo(...Object.values(model.state.ipData));
-    View.changeMapView(...model.state.latLot, DEFAULT_ZOOM);
+    View.changeMapView(model.state.ipData.lat, model.state.ipData.lng, DEFAULT_ZOOM);
   } catch (err) {
     View.renderError("Something went wrong");
   }
