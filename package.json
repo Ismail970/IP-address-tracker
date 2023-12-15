@@ -10,12 +10,12 @@
   "author": "Ismail",
   "license": "ISC",
   "devDependencies": {
-    "@types/core-js": "^2.5.5",
-    "@types/regenerator-runtime": "^0.13.1",
-    "parcel": "^2.7.0"
+    "@types/core-js": "^2.5.8",
+    "@types/regenerator-runtime": "^0.13.5",
+    "parcel": "^2.10.3"
   },
   "dependencies": {
-    "core-js": "^3.25.3",
-    "regenerator-runtime": "^0.13.9"
+    "core-js": "^3.34.0",
+    "regenerator-runtime": "^0.13.11"
   }
 }

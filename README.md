@@ -1,11 +1,6 @@
 # IP tracker
 
-## Table of contents
-
-- [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
+- [**Demo**](https://iptrax.netlify.app/)
 
 ### Screenshot
 
@@ -17,19 +12,13 @@
 
 ![](screenshots/Screensho-mobile-active-IP-Address-Tracker.png)
 
-### Links
-
-- [**Live Site**](https://iptrax.netlify.app/)
-
-## Process
-
 ### Built with
 
-- Semantic HTML5 markup
+- Semantic HTML5
 - CSS
 - Javascript/ES6+
 - Leaflet library (map)
 - MVC architecture
-- Bundled with parcel
+- Parcel
 - Ipify and ipGeolocation API's
 - Mobile-first workflow
